@@ -159,7 +159,6 @@ abstract class PostsFragment : Fragment() {
                         hideProgressBar()
                     }
                 }
-
             }))
             .error(R.drawable.errorholder)
             .into(postGif)
