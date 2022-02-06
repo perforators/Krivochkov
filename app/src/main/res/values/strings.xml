@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MainActivity</string>
+    <string name="tab_latest">Последние</string>
+    <string name="tab_hot">Горячие</string>
+    <string name="tab_top">Популярные</string>
+    <string name="title_toolbar">Developers Life</string>
+    <string name="post">post</string>
+    <string name="error_text">Произошла ошибка при загрузке данных. Проверьте подключение к сети.</string>
+    <string name="error_button">ПОВТОРИТЬ</string>
+    <string name="error_image">error</string>
+    <string name="next">next</string>
+    <string name="prev">previous</string>
+</resources>
