@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.krivochkov.tinkoff_lab.R
 import com.krivochkov.tinkoff_lab.domain.model.Post
 import com.krivochkov.tinkoff_lab.presentation.ScreenState
+import com.krivochkov.tinkoff_lab.presentation.posts.listeners.GifRequestListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
@@ -150,8 +151,17 @@ abstract class PostsFragment : Fragment() {
         Glide.with(this)
             .asGif()
             .load(post.gifURL)
-            .error(R.drawable.errorholder)
             .centerCrop()
+            .listener(GifRequestListener(object : GifRequestListener.Callback{
+                override fun onEvent() {
+                    val currentState = viewModel.state.value
+                    if (currentState !is ScreenState.Loading) {
+                        hideProgressBar()
+                    }
+                }
+
+            }))
+            .error(R.drawable.errorholder)
             .into(postGif)
     }
 
