@@ -33,7 +33,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/post"
-            android:scaleType="fitXY"
             tools:ignore="ImageContrastCheck" />
 
         <TextView
