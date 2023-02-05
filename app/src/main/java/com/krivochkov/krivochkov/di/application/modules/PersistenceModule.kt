@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.krivochkov.krivochkov.data.local.cache.FilmsCache
 import com.krivochkov.krivochkov.data.local.cache.InMemoryCache
 import com.krivochkov.krivochkov.data.local.database.FavouriteFilmsDatabase
-import com.krivochkov.krivochkov.data.local.database.dao.FavouriteFilmsDao
 import com.krivochkov.krivochkov.domain.model.Film
 import dagger.Module
 import dagger.Provides

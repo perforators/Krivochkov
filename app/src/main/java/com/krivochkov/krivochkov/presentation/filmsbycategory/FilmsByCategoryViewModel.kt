@@ -51,10 +51,7 @@ class FilmsByCategoryViewModel(
         addFilmToFavouritesUseCase.add(filmId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onError = {  },
-                onComplete = { fetchFilms() }
-            )
+            .subscribeBy{ fetchFilms() }
     }
 
     fun searchFilms(searchQuery: String) {

@@ -45,18 +45,20 @@ class FilmsRepositoryImpl @Inject constructor(
         return dao.fetchAllFilms().map { it.map { entity -> entity.mapToFilm() } }
     }
 
-    override fun fetchFilm(filmId: Int): Single<Film> {
-        TODO("Not yet implemented")
-    }
-
-    override fun addFilmToFavourites(filmId: Int): Completable = Single.just(cache[filmId]!!)
+    override fun fetchFilm(filmId: Int) = Single.fromCallable { cache[filmId]!! }
         .flatMap { film ->
             if (film.description.isEmpty()) {
-                fetchFilmDescription(filmId).map { film.copy(description = it) }
+                fetchFilmDescription(filmId).map {
+                    val updatedFilm = film.copy(description = it)
+                    cache.put(filmId, updatedFilm)
+                    updatedFilm
+                }
             } else {
                 Single.just(film)
             }
         }
+
+    override fun addFilmToFavourites(filmId: Int): Completable = fetchFilm(filmId)
         .map {
             cache.put(filmId, it.copy(isFavourite = true))
             dao.insertFilm(it.mapToEntity())

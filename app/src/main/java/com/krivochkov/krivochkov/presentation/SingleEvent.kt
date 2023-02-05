@@ -2,8 +2,7 @@ package com.krivochkov.krivochkov.presentation
 
 class SingleEvent<out T>(private val content: T) {
 
-    var hasBeenHandled = false
-        private set
+    private var hasBeenHandled = false
 
     fun getContentIfNotHandled(): T? {
         return if (hasBeenHandled) {
@@ -13,6 +12,4 @@ class SingleEvent<out T>(private val content: T) {
             content
         }
     }
-
-    fun peekContent(): T = content
 }

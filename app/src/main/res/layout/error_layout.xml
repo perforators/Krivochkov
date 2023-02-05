@@ -40,7 +40,7 @@
         android:id="@+id/error_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/big_margin"
         android:padding="@dimen/middle_padding"
         android:text="@string/repeat"
         android:textAllCaps="false"
@@ -48,6 +48,7 @@
         android:textSize="14sp"
         android:typeface="sans"
         app:backgroundTint="@color/blue_200"
-        app:cornerRadius="24dp" />
+        app:cornerRadius="24dp"
+        tools:ignore="TextContrastCheck" />
 
 </LinearLayout>

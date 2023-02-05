@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.krivochkov.krivochkov.R
+import java.util.*
 
 fun ImageView.loadImage(url: String) {
     Glide.with(this)
@@ -17,3 +18,5 @@ fun ImageView.loadImage(url: String) {
 fun Fragment.getColor(@ColorRes resId: Int): Int {
     return ContextCompat.getColor(requireContext(), resId)
 }
+
+fun String.toCapital() = replaceFirstChar { it.titlecase(Locale.getDefault()) }

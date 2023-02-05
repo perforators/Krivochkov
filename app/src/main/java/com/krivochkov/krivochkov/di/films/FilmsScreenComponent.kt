@@ -2,6 +2,7 @@ package com.krivochkov.krivochkov.di.films
 
 import com.krivochkov.krivochkov.di.films.modules.DomainModule
 import com.krivochkov.krivochkov.di.films.modules.PresentationModule
+import com.krivochkov.krivochkov.presentation.filmdetails.FilmDetailsFragment
 import com.krivochkov.krivochkov.presentation.filmsbycategory.favouritefilms.FavouriteFilmsFragment
 import com.krivochkov.krivochkov.presentation.filmsbycategory.topfilms.TopFilmsFragment
 import dagger.Component
@@ -18,6 +19,8 @@ interface FilmsScreenComponent {
     fun inject(fragment: TopFilmsFragment)
 
     fun inject(fragment: FavouriteFilmsFragment)
+
+    fun inject(fragment: FilmDetailsFragment)
 
     @Component.Factory
     interface Factory {

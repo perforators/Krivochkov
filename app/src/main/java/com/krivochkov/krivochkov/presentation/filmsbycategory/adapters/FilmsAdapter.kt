@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.krivochkov.krivochkov.presentation.loadImage
 import com.krivochkov.krivochkov.databinding.FilmItemBinding
 import com.krivochkov.krivochkov.domain.model.Film
+import com.krivochkov.krivochkov.presentation.toCapital
 
 class FilmsAdapter : RecyclerView.Adapter<FilmsAdapter.FilmViewHolder>() {
 
@@ -33,7 +34,8 @@ class FilmsAdapter : RecyclerView.Adapter<FilmsAdapter.FilmViewHolder>() {
         fun bind(film: Film) {
             binding.filmName.text = film.name
             binding.isFavourite.isVisible = film.isFavourite
-            binding.genreAndYear.text = film.year
+            binding.genreAndYear.text =
+                "${(film.genres.firstOrNull() ?: "").toCapital()} (${film.year})"
             binding.poster.loadImage(film.posterUrl)
             binding.filmItem.setOnClickListener {
                 onFilmClick(film.id)

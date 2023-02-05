@@ -5,8 +5,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.krivochkov.krivochkov.data.local.database.entity.FilmEntity
-import com.krivochkov.krivochkov.domain.model.Film
-import io.reactivex.Completable
 import io.reactivex.Single
 
 @Dao

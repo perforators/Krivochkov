@@ -48,11 +48,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidXLifecycleVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
-    implementation 'androidx.fragment:fragment-ktx:1.1.0'
-
-    //Tests
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test.ext:junit:$junitExtVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
 
     // Serialization
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationJsonVersion"
@@ -74,7 +70,7 @@ dependencies {
     // Room
     implementation "androidx.room:room-runtime:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.legacy:legacy-support-v4:$legacyVersion"
     implementation "androidx.room:room-rxjava2:$roomVersion"
 
     //Dagger 2
